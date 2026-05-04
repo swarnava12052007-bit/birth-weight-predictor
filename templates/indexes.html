@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Weight Prediction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 420px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus {
+            border-color: #3182ce;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #2b6cb0;
+        }
+
+        .result-box {
+            background-color: #c6f6d5;
+            color: #22543d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Predict Birth Weight</h1>
+    
+    <div class="form-container">
+        <form action="/predict" method="POST">
+            
+            <div class="form-group">
+                <label for="gestation">Gestation:</label>
+                <input id="gestation" name="gestation" type="number" step="any" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="parity">Parity:</label>
+                <input id="parity" name="parity" type="number" step="any" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input id="age" name="age" type="number" step="any" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="height">Height:</label>
+                <input id="height" name="height" type="number" step="any" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input id="weight" name="weight" type="number" step="any" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="smoke">Smoke:</label>
+                <input id="smoke" name="smoke" type="number" step="any" required>
+            </div>
+
+            <button type="submit">Predict Birth Weight</button>
+        </form>
+    </div>
+
+    {% if prediction %}
+        <div class="result-box">
+            <h3>Predicted Birth Weight: {{ prediction }} units</h3>
+        </div>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+https://drive.google.com/drive/folders/1DCCIQyRG6rdB60EwV_oK66X5EzxIqjOv?usp=sharing
+ What i learned in python 
+
+PART-1=
+1. Data variables - used to store data types
+2. Data types - int(6,7), float(3.6), str(hello)
+3. Predined keywords in Pyhton
+4. Muatability and Imuatability
+5. Operators - i. arithmetic operators (+,-,/,*)
+               ii. comparison operators (<,>)
+               iii. membership operators (to check the participant's name in the list like {print "s" in "swarnava"})
+               iv. logical operators (and, or, not)like print(x>5 and x<10)when x=7 
+               v. assignment operators (=, +=, -=)
+               vi. identity operators (is, is not)
+6. Conditional statements - decision making(if, else, elif)
+7. Loops - repetitive loops, for loops, whole loops
+8. Import and export - using def
+ 
+
+PART-2=
+1. Strings
+2. Lists [are mutable in nature and stored in [] brakets]
+3. Tuples [are imutable in nature and stored in () brakets]
+4. Sets [a collection of unique items in {} brakets]
+5. Dictionary [a collection of key-value pairs]
+6. Functions
+
