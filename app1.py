@@ -30,7 +30,7 @@ def get_prediction():
     baby_df = pd.DataFrame([cleaned_data])
     
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    model_path = os.path.join(base_dir, "model", "model.pkl")
+    model_path = os.path.join(base_dir, "model.pkl")
     
     with open(model_path, "rb") as obj:
         model = pickle.load(obj)
